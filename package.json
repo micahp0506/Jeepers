@@ -2,9 +2,12 @@
   "name": "jeepers",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "serve": "nodemon server.js",
+    "build": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -17,9 +20,11 @@
   },
   "homepage": "https://github.com/micahp0506/Jeepers#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "history": "^2.0.1",
     "node-libs-browser": "^0.5.3",
+    "path": "^0.12.7",
     "react": "^0.14.0",
     "react-dom": "^0.14.2",
     "react-router": "^1.0.3",
