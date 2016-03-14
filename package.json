@@ -1,0 +1,33 @@
+{
+  "name": "jeepers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micahp0506/Jeepers.git"
+  },
+  "author": "Micah Wells <micahp0506@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micahp0506/Jeepers/issues"
+  },
+  "homepage": "https://github.com/micahp0506/Jeepers#readme",
+  "dependencies": {
+    "history": "^2.0.1",
+    "node-libs-browser": "^0.5.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.2",
+    "react-router": "^1.0.3",
+    "webpack": "^1.12.2"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.30",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.21.0",
+    "style-loader": "^0.13.0"
+  }
+}
