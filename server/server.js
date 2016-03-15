@@ -11,8 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'..', 'client/public')));
 
 app.listen(PORT, () => {
+    console.log(__dirname)
   console.log(`Node.js server has started. Listening on port ${PORT}`);
   });

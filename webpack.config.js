@@ -1,7 +1,7 @@
 module.exports = {
-  entry: "./public/client/App.js",
+  entry: "./client/js/App.js",
   output:{
-    filename: "public/bundle.js"
+    filename: "client/public/bundle.js"
   },
   module: {
     loaders: [
@@ -12,7 +12,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style-loader!css-loader'
+      },
+
+      { test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader'
       }
     ]
   }

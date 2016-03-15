@@ -33,7 +33,11 @@ node_modules
 .node_repl_history
 
 # Ignoring bundle file
-public/bundle.js
+client/public/bundle.js
 
 # Ignoring bower_components
-public/client/bower_components
+client/bower_components
+
+#Ignoring svg and ttf
+*.svg
+*.ttf
