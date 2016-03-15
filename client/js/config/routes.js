@@ -13,5 +13,6 @@ export default (
       <IndexRoute component={Home} />
     </Route>
     <Route path="/login" component={Login}></Route>
+
   </Router>
 )
