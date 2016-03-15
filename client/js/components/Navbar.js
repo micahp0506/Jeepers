@@ -1,0 +1,16 @@
+'use strict';
+
+
+import React from 'react';
+
+export default React.createClass({
+  render() {
+    return (
+        <div className="ui inverted menu navbar ">
+            <a href="#" className="brand item logo-container">Jeepers</a>
+            <a className="item" href="#/home">Home</a>
+            <a className="item ui.basic.modal" href="#/login">Log In</a>
+        </div>
+    )
+  }
+})
