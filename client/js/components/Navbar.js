@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import UserActions from '../actions/UserActions';
 
 export default React.createClass({
   render() {
@@ -9,7 +10,7 @@ export default React.createClass({
         <div className="ui inverted menu navbar ">
             <a href="#" className="brand item logo-container">Jeepers</a>
             <a className="item" href="#/home">Home</a>
-            <a className="item ui.basic.modal" href="#/login">Log In</a>
+            <a className="item" id="login" href="#/login">Log In</a>
         </div>
     )
   }

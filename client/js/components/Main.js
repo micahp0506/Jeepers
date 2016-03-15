@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Navbar from './Navbar';
-import '../Styles/HomeStyles.css';
+import '../styles/HomeStyles.css';
 
 
 export default React.createClass({

@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react';
-import HomeActions from '../Actions/HomeActions';
+import HomeActions from '../actions/HomeActions';
 
 
 
