@@ -1,0 +1,7 @@
+.main-container {
+    background: url('/jeep.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
+}
