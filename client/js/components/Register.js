@@ -10,7 +10,7 @@ export default React.createClass({
             <div className="column">
                 <h2 className="ui black image header">
                     <div className="content">
-                        Log-in to your account
+                        Register as a New User
                     </div>
                 </h2>
                 <form className="ui large form">
@@ -29,15 +29,19 @@ export default React.createClass({
                                 </input>
                             </div>
                         </div>
-                        <div className="ui fluid large black submit button">Login</div>
+                        <div className="field">
+                            <div className="ui left icon input">
+                                <i className="lock icon"></i>
+                                <input type="password" name="password" placeholder="Confirm Password">
+                                </input>
+                            </div>
+                        </div>
+                        <div className="ui fluid large black submit button">Register</div>
                     </div>
                     <div className="ui error message"></div>
                 </form>
-            <div className="ui message">
-                New to us? <a href="#/register">Sign Up</a>
             </div>
         </div>
-    </div>
     )
   }
 })
