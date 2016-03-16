@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     category: DataTypes.STRING,
     description: DataTypes.STRING,
-    image: DataTypes.BYTEA,
+    image: DataTypes.BLOB,
     make: DataTypes.STRING,
     model: DataTypes.STRING,
     userId: DataTypes.INTEGER

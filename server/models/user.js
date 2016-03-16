@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
         autoIncrement: true
     },
     userEmail: DataTypes.STRING,
-    userPassword: Data.Types.STRING
+    userPassword: DataTypes.STRING
   }, {
     tableName: 'user',
     timestamps: false,

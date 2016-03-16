@@ -1,25 +1,22 @@
 'use strict';
 
 
-var User = require('../models/user');
+const db = require('../models/');
+db.sequelize.sync();
 
-var UserController = {};
+const UserController = {};
 
 // Controls users registering as technicians
 UserController.registerUser = function (req, res) {
-    User.findOne({userEmail: req.body.userEmail}, (err, user) => {
-        if (err) throw err;
+    db.User.findOrCreate({where: {userEmail: req.body.userEmail, userPassword: req.body.userPassword}}).spread((user, created) => {
+        if (!created) {
 
-        if (user) {
-            alert('User already exists.');
-      } else {
-        User.create(req.body, (err) => {
-          if (err) throw err;
+            res.sendStatus(404)
+        } else {
 
-          res.redirect('/login');
-        });
-      }
+          res.sendStatus(200);
+        }
     });
-}
+};
 
 module.exports = UserController;

@@ -2,6 +2,7 @@
 
 
 import alt from '../utils/alt';
+import {browserHistory} from "react-router";
 import $ from '../../bower_components/jquery/dist/jquery.min.js'
 
 // Creating constructor to handle different states
@@ -26,10 +27,14 @@ class RegisterActions {
       data: { userEmail: email, userPassword: password }
     })
       .done((data) => {
-        this.actions.registerSuccess(data.message);
+        browserHistory.pushState('/login');
+        console.log("message", data.message);
+        this.registerSuccess(data.message);
       })
       .fail((jqXhr) => {
-        this.actions.registerFail(jqXhr.responseJSON.message);
+        // console.log("this", this);
+        console.log("jqXhr", jqXhr.message);
+        this.registerFail(jqXhr.responseJSON.message);
       });
   }
 }

@@ -22,8 +22,10 @@ class RegisterStore {
 
   // Handling the failure to register of new user
   onregisterFail(errorMessage) {
+    console.log("error", errorMessage);
     this.emailValidationState = 'has-error';
-    this.helpBlock = errorMessage;
+    // this.helpBlock = errorMessage;
+    alert("User already exists.")
   }
 
   // Binding provided email
