@@ -10,8 +10,9 @@ class RegisterActions {
       'registerFail',
       'newEmail',
       'newPassword',
-      'invalidName',
-      'invalidGender'
+      'noEmail',
+      'noPassword',
+      'doesNotMatch'
     );
   }
 
