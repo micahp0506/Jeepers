@@ -30,7 +30,6 @@ class RegisterStore {
   onnewEmail(event) {
     this.email = event.target.value;
     this.emailValidationState = '';
-    this.helpBlock = '';
   }
 
   // Binding provided hashed password

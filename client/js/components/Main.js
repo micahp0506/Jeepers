@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Navbar from './Navbar';
+
 import '../styles/HomeStyles.css';
 import '../styles/LoginStyles.css'
 

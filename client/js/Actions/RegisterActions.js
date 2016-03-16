@@ -2,6 +2,7 @@
 
 
 import alt from '../utils/alt';
+import $ from '../../bower_components/jquery/dist/jquery.min.js'
 
 // Creating constructor to handle different states
 class RegisterActions {
@@ -18,6 +19,7 @@ class RegisterActions {
   }
   // Making POST call to DB to add new user info
   addUser(email, password) {
+    console.log(email, password);
     $.ajax({
       type: 'POST',
       url: '/api/user/create',

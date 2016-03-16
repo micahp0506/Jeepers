@@ -11,6 +11,7 @@ class Register extends React.Component {
     super(props);
     this.state = RegisterStore.getState();
     this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   // Listening to changes at the store
@@ -28,13 +29,17 @@ class Register extends React.Component {
     this.setState(state);
   }
 
-  // Handling submit onf users info
+  // Handling submit on users info
   handleSubmit(event) {
-    event.preventDefault();
+    console.log(this)
+    // console.log(event);
+    console.log(this.refs);
+    // event.preventDefault();
 
     // Email and Password provided bu user
-    let email = this.state.email;
-    let password = this.state.password;
+    let email = this.refs.email.value;
+    let password = this.refs.password.value;
+    let confirmPassword = this.refs.confirmPassword.value;
 
     // If no email provided
     if (!email) {
@@ -49,7 +54,7 @@ class Register extends React.Component {
 
     // If passwords do not match
     if (password !== confirmPassword) {
-      RegisterActions.doesNotmatch();
+      RegisterActions.doesNotMatch();
     }
 
     // Handling registration of new user
@@ -73,27 +78,25 @@ class Register extends React.Component {
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="user icon"></i>
-                                <input type="text" name="email" placeholder="E-mail address" value={this.state.email}
-                           onChange={RegisterActions.newEmail}>
+                                <input type="text" ref="email" name="email" placeholder="E-mail address">
                                 </input>
                             </div>
                         </div>
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="lock icon"></i>
-                                <input type="password" name="password" placeholder="Password" value={this.state.password}
-                           onChange={RegisterActions.newPassword}>
+                                <input type="password" ref="password" name="password" name="password" placeholder="Password">
                                 </input>
                             </div>
                         </div>
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="lock icon"></i>
-                                <input type="password" name="password" placeholder="Confirm Password">
+                                <input type="password" ref="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
                                 </input>
                             </div>
                         </div>
-                        <div className="ui fluid large black submit button" onSubmit={this.handleSubmit.bind(this)}>>Register</div>
+                        <div className="ui fluid large black submit button" onClick={this.handleSubmit}>Register</div>
                     </div>
                     <div className="ui error message"></div>
                 </form>
