@@ -3,6 +3,7 @@
 
 import alt from '../alt';
 
+// Creating constructor to handle different states
 class RegisterActions {
   constructor() {
     this.generateActions(
@@ -15,7 +16,7 @@ class RegisterActions {
       'doesNotMatch'
     );
   }
-
+  // Making POST call to DB to add new user info
   addUser(email, password) {
     $.ajax({
       type: 'POST',
