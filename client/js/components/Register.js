@@ -5,7 +5,7 @@ import React from 'react';
 import RegisterStore from '../stores/RegisterStore';
 import RegisterActions from '../actions/RegisterActions';
 
-
+// Creating Register to handle actions and store
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -13,42 +13,52 @@ class Register extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  // Listening to changes at the store
   componentDidMount() {
     RegisterStore.listen(this.onChange);
   }
 
+  // Unlistening to changes at the store
   componentWillUnmount() {
     RegisterStore.unlisten(this.onChange);
   }
 
+  // When change occurs handle state
   onChange(state) {
     this.setState(state);
   }
 
+  // Handling submit onf users info
   handleSubmit(event) {
     event.preventDefault();
 
+    // Email and Password provided bu user
     let email = this.state.email;
     let password = this.state.password;
 
+    // If no email provided
     if (!email) {
       RegisterActions.noEmail();
       this.refs.nameTextField.getDOMNode().focus();
     }
 
+    // If no password provided
     if (!password) {
       RegisterActions.noPassword();
     }
 
+    // If passwords do not match
     if (password !== confirmPassword) {
       RegisterActions.doesNotmatch();
     }
 
+    // Handling registration of new user
     if (email && password) {
       RegisterActions.addUser(email, password);
     }
   }
 
+  // Rendering HTML
   render() {
     return (
         <div className="ui middle aligned center aligned grid">

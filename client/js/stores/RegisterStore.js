@@ -58,4 +58,4 @@ class RegisterStore {
   }
 }
 
-export default alt.createStore(AddCharacterStore);
+export default alt.createStore(RegisterStore);
