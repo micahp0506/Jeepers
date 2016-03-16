@@ -74,7 +74,7 @@ class Register extends React.Component {
                             <div className="ui left icon input">
                                 <i className="user icon"></i>
                                 <input type="text" name="email" placeholder="E-mail address" value={this.state.email}
-                           onChange={RegisterActions.newEmail}
+                           onChange={RegisterActions.newEmail}>
                                 </input>
                             </div>
                         </div>
@@ -101,6 +101,6 @@ class Register extends React.Component {
         </div>
     )
   }
-})
+}
 
 export default Register;

@@ -1,7 +1,7 @@
 'use strict';
 
 
-import alt from '../alt';
+import alt from '../utils/alt';
 import RegisterActions from '../actions/RegisterActions';
 
 // Creating register store constructor

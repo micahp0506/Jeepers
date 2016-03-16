@@ -1,7 +1,7 @@
 'use strict';
 
 
-import alt from '../alt';
+import alt from '../utils/alt';
 
 // Creating constructor to handle different states
 class RegisterActions {
