@@ -27,13 +27,9 @@ class RegisterActions {
       data: { userEmail: email, userPassword: password }
     })
       .done((data) => {
-        browserHistory.pushState('/login');
-        console.log("message", data.message);
         this.registerSuccess(data.message);
       })
       .fail((jqXhr) => {
-        // console.log("this", this);
-        console.log("jqXhr", jqXhr.message);
         this.registerFail(jqXhr.responseJSON.message);
       });
   }

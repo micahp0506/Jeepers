@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import { browserHistory } from 'react-router'
 import RegisterStore from '../stores/RegisterStore';
 import RegisterActions from '../actions/RegisterActions';
 
@@ -60,6 +61,8 @@ class Register extends React.Component {
     // Handling registration of new user
     if (email && password) {
       RegisterActions.addUser(email, password);
+      router.push(path)
+      // this.context.history.pushState(null, '/');
     }
   }
 
@@ -105,5 +108,10 @@ class Register extends React.Component {
     )
   }
 }
+
+
+Register.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
 
 export default Register;
