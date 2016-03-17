@@ -20,7 +20,7 @@ class RegisterActions {
   }
   // Making POST call to DB to add new user info
   addUser(email, password) {
-    console.log(email, password);
+    console.log("e & p", email, password);
     $.ajax({
       type: 'POST',
       url: '/api/user/create',

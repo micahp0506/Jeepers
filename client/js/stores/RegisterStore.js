@@ -16,6 +16,7 @@ class RegisterStore {
 
   // Handling the registration of new user
   onregisterSuccess(successMessage) {
+    console.log("this", this);
     this.emailValidationState = 'has-success';
     this.helpBlock = successMessage;
   }

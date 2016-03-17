@@ -32,12 +32,7 @@ class Register extends React.Component {
 
   // Handling submit on users info
   handleSubmit(event) {
-    console.log(this)
-    // console.log(event);
-    console.log(this.refs);
-    // event.preventDefault();
-
-    // Email and Password provided bu user
+    // Email and Password provided by user
     let email = this.refs.email.value;
     let password = this.refs.password.value;
     let confirmPassword = this.refs.confirmPassword.value;
@@ -61,7 +56,6 @@ class Register extends React.Component {
     // Handling registration of new user
     if (email && password) {
       RegisterActions.addUser(email, password);
-      router.push(path)
       // this.context.history.pushState(null, '/');
     }
   }
@@ -109,9 +103,5 @@ class Register extends React.Component {
   }
 }
 
-
-Register.contextTypes = {
-  router: React.PropTypes.func.isRequired
-};
 
 export default Register;
