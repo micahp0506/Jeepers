@@ -25,9 +25,29 @@ class Register extends React.Component {
     RegisterStore.unlisten(this.onChange);
   }
 
+  // Getting the intial state
+  // getInitialState() {
+  //   return {email: '', password: '', confirmPassword: ''};
+  // }
+
+  // Handling the email value change
+  handleEmailChange(e) {
+    setState({email: e.target.value});
+  }
+
+  // Handling the password value change
+  handlePasswordChange(e) {
+    setState({password: e.target.value});
+  }
+
+  // Handling the confirm password value change
+  handleConfirmPasswordChange(e) {
+    setState({confirmPassword: e.target.value});
+  }
+
   // When change occurs handle state
   onChange(state) {
-    this.setState(state);
+    setState(state);
   }
 
   // Handling submit on users info
@@ -56,6 +76,7 @@ class Register extends React.Component {
     // Handling registration of new user
     if (email && password) {
       RegisterActions.addUser(email, password);
+      this.setState({email: '', password: '', confirmPassword: ''});
       // this.context.history.pushState(null, '/');
     }
   }
@@ -75,21 +96,21 @@ class Register extends React.Component {
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="user icon"></i>
-                                <input type="text" ref="email" name="email" placeholder="E-mail address">
+                                <input type="text" ref="email" name="email" value={this.state.email} onChange={this.handleEmailChange} placeholder="E-mail address">
                                 </input>
                             </div>
                         </div>
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="lock icon"></i>
-                                <input type="password" ref="password" name="password" name="password" placeholder="Password">
+                                <input type="password" ref="password" name="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="Password">
                                 </input>
                             </div>
                         </div>
                         <div className="field">
                             <div className="ui left icon input">
                                 <i className="lock icon"></i>
-                                <input type="password" ref="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                                <input type="password" ref="confirmPassword" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleConfirmPasswordChange} placeholder="Confirm Password">
                                 </input>
                             </div>
                         </div>
