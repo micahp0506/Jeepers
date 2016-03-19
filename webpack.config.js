@@ -4,13 +4,6 @@ module.exports = {
     filename: "client/public/bundle.js"
   },
   module: {
-    preLoaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'source-map'
-            }
-        ],
     loaders: [
       {
         test: /\.jsx?$/,

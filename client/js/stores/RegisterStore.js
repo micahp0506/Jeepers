@@ -9,6 +9,7 @@ class RegisterStore {
   constructor() {
     this.bindActions(RegisterActions);
     this.email = '';
+    this.password = '';
     this.helpBlock = '';
     this.emailValidationState = '';
     this.passwordValidationState = '';
@@ -16,7 +17,7 @@ class RegisterStore {
 
   // Handling the registration of new user
   onregisterSuccess(successMessage) {
-    console.log("this", this);
+    console.log("store this", this);
     this.emailValidationState = 'has-success';
     this.helpBlock = successMessage;
   }
@@ -25,7 +26,7 @@ class RegisterStore {
   onregisterFail(errorMessage) {
     console.log("error", errorMessage);
     this.emailValidationState = 'has-error';
-    // this.helpBlock = errorMessage;
+    this.helpBlock = errorMessage;
     alert("User already exists.")
   }
 

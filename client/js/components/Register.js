@@ -12,6 +12,9 @@ class Register extends React.Component {
     super(props);
     this.state = RegisterStore.getState();
     this.onChange = this.onChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -25,33 +28,29 @@ class Register extends React.Component {
     RegisterStore.unlisten(this.onChange);
   }
 
-  // Getting the intial state
-  // getInitialState() {
-  //   return {email: '', password: '', confirmPassword: ''};
-  // }
-
   // Handling the email value change
-  handleEmailChange(e) {
-    setState({email: e.target.value});
+  handleEmailChange() {
+    this.setState({email: this.refs.email.value});
   }
 
   // Handling the password value change
-  handlePasswordChange(e) {
-    setState({password: e.target.value});
+  handlePasswordChange() {
+    this.setState({password: this.refs.password.value});
   }
 
   // Handling the confirm password value change
-  handleConfirmPasswordChange(e) {
-    setState({confirmPassword: e.target.value});
+  handleConfirmPasswordChange() {
+    this.setState({confirmPassword: this.refs.confirmPassword.value});
   }
 
   // When change occurs handle state
   onChange(state) {
-    setState(state);
+    this.setState(state);
   }
 
   // Handling submit on users info
   handleSubmit(event) {
+    console.log("event", event);
     // Email and Password provided by user
     let email = this.refs.email.value;
     let password = this.refs.password.value;
@@ -77,7 +76,9 @@ class Register extends React.Component {
     if (email && password) {
       RegisterActions.addUser(email, password);
       this.setState({email: '', password: '', confirmPassword: ''});
-      // this.context.history.pushState(null, '/');
+      console.log("this", this);
+      console.log("this.context", this.context);
+      this._reactInternalInstance._context.history.push('/login');
     }
   }
 
@@ -114,7 +115,7 @@ class Register extends React.Component {
                                 </input>
                             </div>
                         </div>
-                        <div className="ui fluid large black submit button" onClick={this.handleSubmit}>Register</div>
+                        <div className="ui fluid large black submit button" onClick={this.handleSubmit}>Register & Log In</div>
                     </div>
                     <div className="ui error message"></div>
                 </form>
