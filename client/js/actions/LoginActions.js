@@ -34,4 +34,4 @@ class LoginActions {
   }
 }
 
-export default alt.createActions(RegisterActions);
+export default alt.createActions(LoginActions);

@@ -5,7 +5,7 @@ import alt from '../utils/alt';
 import RegisterActions from '../actions/LoginActions';
 
 // Creating register store constructor
-class RegisterStore {
+class LoinStore {
   constructor() {
     this.bindActions(LoginActions);
     this.email = '';
@@ -27,7 +27,7 @@ class RegisterStore {
     console.log("error", errorMessage);
     this.emailValidationState = 'has-error';
     this.helpBlock = errorMessage;
-    alert("User already exists.")
+    alert("Email or password is not correct. Please try again.")
   }
 
   // Handling no email provided by user
@@ -44,4 +44,4 @@ class RegisterStore {
 
 }
 
-export default alt.createStore(RegisterStore);
+export default alt.createStore(LoginStore);
