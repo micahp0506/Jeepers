@@ -16,16 +16,17 @@ class LoginActions {
     );
   }
 
-  // Making POST call to DB to add new user info
+  // Making Get call to DB to get user info
   loginUser(email, password) {
     $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: '/api/user',
       data: { userEmail: email, userPassword: password }
     })
       .done((data) => {
         console.log("data", data);
         console.log("this", this);
+        console.log("User logged in");
         this.registerSuccess(data.message);
       })
       .fail((jqXhr) => {

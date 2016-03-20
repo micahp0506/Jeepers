@@ -3,6 +3,8 @@
 
 const db = require('../models/');
 db.sequelize.sync();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 const UserController = {};
 
@@ -34,7 +36,32 @@ UserController.registerUser = function (req, res, done) {
 };
 
 // Controls the logging in of a user
-UserController.loginUser = function () {}
+UserController.loginUser = function (req, res) {
+    passport.use(new LocalStrategy({
+        usernameField: 'userEmail'
+    },
+    (email, password, done) => {
+        db.User.findOne({where:{userEmail: req.body.userEmail}})
+        .then((err, user)=> {
+            if (err) throw (err);
+
+            if (user) {
+                db.User.authenticate(password, (err, valid) => {
+                    if (err) throw err;
+
+                    if (valid) {
+                        return done(null, user);
+                    } else {
+                        return done();
+                    }
+                });
+            } else {
+                return done();
+            }
+        });
+    }));
+};
+
 
 
 module.exports = UserController;

@@ -2,7 +2,6 @@
 
 
 import React from 'react';
-import UserActions from '../actions/UserActions';
 
 export default React.createClass({
   render() {

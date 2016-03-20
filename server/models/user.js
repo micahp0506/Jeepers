@@ -23,9 +23,9 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     instanceMethods: {
-      validPassword: function(userPassword, done) {
+      authenticate: function(userPassword, cb) {
         console.log("in2");
-            return bcrypt.compareSync(userPassword, this.userPassword, null);
+            return bcrypt.compare(userPassword, this.userPassword, cb);
       },
     }
   });
