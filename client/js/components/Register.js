@@ -75,7 +75,7 @@ class Register extends React.Component {
     if (email && password) {
       RegisterActions.addUser(email, password);
       this.setState({email: '', password: '', confirmPassword: ''});
-      this._reactInternalInstance._context.history.push('/login');
+      this._reactInternalInstance._context.history.push('/');
     }
   }
 

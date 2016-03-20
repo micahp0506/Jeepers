@@ -2,7 +2,7 @@
 
 
 const bcrypt = require('bcrypt');
-// const BCRYPT_DIFFICULTY = 11;
+
 
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define('User', {

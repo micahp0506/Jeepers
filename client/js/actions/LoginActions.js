@@ -2,29 +2,25 @@
 
 
 import alt from '../utils/alt';
-import {browserHistory} from "react-router";
 import $ from '../../bower_components/jquery/dist/jquery.min.js';
 
 
 // Creating constructor to handle different states
-class RegisterActions {
+class LoginActions {
   constructor() {
     this.generateActions(
-      'registerSuccess',
-      'registerFail',
-      'newEmail',
-      'newPassword',
+      'loginSuccess',
+      'loginFail',
       'noEmail',
-      'noPassword',
-      'doesNotMatch'
+      'noPassword'
     );
   }
 
   // Making POST call to DB to add new user info
-  addUser(email, password) {
+  loginUser(email, password) {
     $.ajax({
-      type: 'POST',
-      url: '/api/user/create',
+      type: 'GET',
+      url: '/api/user',
       data: { userEmail: email, userPassword: password }
     })
       .done((data) => {
