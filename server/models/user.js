@@ -1,6 +1,9 @@
 'use strict';
 
 
+const bcrypt = require('bcrypt');
+// const BCRYPT_DIFFICULTY = 11;
+
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define('User', {
     userId: {
@@ -14,9 +17,16 @@ module.exports = function (sequelize, DataTypes) {
     tableName: 'user',
     timestamps: false,
     classMethods: {
-      associate: function (models) {
-        // associations can be defined here
+      generateHash: function(userPassword, done) {
+        console.log("in");
+            return bcrypt.hashSync(userPassword, bcrypt.genSaltSync(8), null);
       }
+    },
+    instanceMethods: {
+      validPassword: function(userPassword, done) {
+        console.log("in2");
+            return bcrypt.compareSync(userPassword, this.userPassword, null);
+      },
     }
   });
 

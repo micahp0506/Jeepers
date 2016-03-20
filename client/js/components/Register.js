@@ -50,7 +50,6 @@ class Register extends React.Component {
 
   // Handling submit on users info
   handleSubmit(event) {
-    console.log("event", event);
     // Email and Password provided by user
     let email = this.refs.email.value;
     let password = this.refs.password.value;
@@ -76,8 +75,6 @@ class Register extends React.Component {
     if (email && password) {
       RegisterActions.addUser(email, password);
       this.setState({email: '', password: '', confirmPassword: ''});
-      console.log("this", this);
-      console.log("this.context", this.context);
       this._reactInternalInstance._context.history.push('/login');
     }
   }
